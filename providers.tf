@@ -1,5 +1,5 @@
 provider "postgresql" {
-  version         = "1.2.0"
+  version         = "1.4.0"
 
   host            = data.terraform_remote_state.rds.outputs.db_instance_address
   port            = data.terraform_remote_state.rds.outputs.db_instance_port
@@ -11,9 +11,9 @@ provider "postgresql" {
 }
 
 provider "aws" {
-  version = "2.33.0"
+  version = "~> 2.0"
 }
 
 provider "vault" {
-  version = "2.5.0"
+  version = "~> 2.0"
 }
