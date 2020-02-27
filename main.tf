@@ -19,6 +19,7 @@ resource "postgresql_role" "pg_role" {
   name             = var.readonly_username
   password         = random_password.pg_password.result
   connection_limit = var.connection_limit
+  roles            = ["pg_read_all_stats"]
 }
 
 resource postgresql_grant "pg_grant" {
