@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.2.0 - 2020-02-26
+### Added
+- Add possibility to create a readonly user
+- Get latest version of postgresql provider
+
 ## v1.1.0 - 2020-01-14
 ### Changed
 - Update postgresql provider to 1.4.0
