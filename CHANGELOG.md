@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.3.0 - 2020-02-27
+### Added
+- Create multiple roles and grant them permissions
+
 ## v1.2.0 - 2020-02-26
 ### Added
 - Add possibility to create a readonly user
