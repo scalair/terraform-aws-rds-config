@@ -23,28 +23,22 @@ variable "extensions" {
   default     = []
 }
 
-variable "readonly_user_enabled" {
-  description = "If true, will create a user with SELECT permission to the provided database"
-  type        = bool
-  default     = false
-}
-
-variable "readonly_username" {
-  description = "The name of the user that is created with readonly permission"
-  type        = string
-  default     = "readonlyuser"
-}
-
-variable "connection_limit" {
-  description = "If this role can log in, this specifies how many concurrent connections the role can establish"
-  type        = number
-  default     = -1
-}
-
-variable "database" {
-  description = "The database to grant privileges on"
-  type        = string
-  default     = ""
+variable "roles" {
+  description = "A list of roles to create"
+  type = list(object({
+    name = string,
+    login = bool,
+    password = string,
+    connection_limit = number,
+    roles = list(string),
+    grants = list(object({
+      database = string,
+      schema = string,
+      object_type = string,
+      privileges = list(string)
+    }))
+  }))
+  default = []
 }
 
 variable "vault_generic_secret_rds_credentials_path" {

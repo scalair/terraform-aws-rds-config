@@ -1,13 +1,5 @@
-output "readonly_username" {
-    value = var.readonly_username
-}
-
-output "readonly_password" {
-    value = random_password.pg_password.result
-}
-
-output "database" {
-    value = var.database
+output "role_credentials" {
+    value = { for role in var.roles: role.name => random_password.pg_password[role.name].result }
 }
 
 output "endpoint" {
