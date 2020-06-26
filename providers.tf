@@ -9,9 +9,9 @@ provider "postgresql" {
   connect_timeout = 60
 }
 
-provider "aws" {
-  version = "~> 2.0"
-}
+#provider "aws" {
+#  version = "~> 2.0"
+#}
 
 provider "vault" {
   version = "~> 2.0"
